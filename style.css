@@ -1,0 +1,187 @@
+/* General Reset and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ------------------------------------------- */
+/* Step 3: Responsive Layout (Flexbox & Grid)  */
+/* ------------------------------------------- */
+
+/* Flexbox for Navigation (Navbar) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d40; /* Dark Green */
+    color: white;
+    padding: 15px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #00897b;
+}
+
+/* CSS Grid for Main Content Area */
+.main-content {
+    display: grid;
+    /* Default layout for desktop/large screens (2 columns) */
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------- */
+/* Step 1: Contact Form Styling                */
+/* ------------------------------------------- */
+
+.form-container, .todo-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Crucial for padding/border not affecting width */
+}
+
+button {
+    background-color: #004d40;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00897b;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: block; /* Ensures it takes up space */
+    margin-top: 5px;
+}
+
+/* ------------------------------------------- */
+/* Step 4: To-Do List Styling                  */
+/* ------------------------------------------- */
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todoInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+#addTaskBtn {
+    border-radius: 0 4px 4px 0;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e0f2f1;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 5px solid #004d40;
+}
+
+.delete-btn {
+    background: #d32f2f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #ef5350;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+/* ------------------------------------------- */
+/* Step 3: Media Queries for Responsiveness    */
+/* ------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Change Grid to a single column on tablets/mobile */
+    .main-content {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 15px;
+        gap: 20px;
+    }
+
+    /* Adjust navbar for smaller screens */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar h1 {
+        margin-bottom: 10px;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+    }
+
+    .navbar a {
+        margin: 0 5px;
+    }
+}
